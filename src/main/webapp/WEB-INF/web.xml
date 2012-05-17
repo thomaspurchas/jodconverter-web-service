@@ -37,13 +37,18 @@
     <servlet-class>org.artofsolving.jodconverter.sample.web.ConverterServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>ConverterServiceServlet</servlet-name>
+    <servlet-class>org.artofsolving.jodconverter.sample.web.ConverterServiceServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>ConverterServlet</servlet-name>
     <url-pattern>/converted/*</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>DocumentConverterServiceServlet</servlet-name>
+    <servlet-name>ConverterServiceServlet</servlet-name>
     <url-pattern>/service</url-pattern>
   </servlet-mapping>
 
