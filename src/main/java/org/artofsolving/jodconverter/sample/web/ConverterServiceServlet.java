@@ -24,6 +24,7 @@ import org.apache.commons.io.IOUtils;
 import org.artofsolving.jodconverter.OfficeDocumentConverter;
 import org.artofsolving.jodconverter.document.DocumentFormat;
 import org.artofsolving.jodconverter.document.DocumentFormatRegistry;
+import org.artofsolving.jodconverter.office.OfficeException;
 
 /**
  * This servlet offers a document converter service suitable for remote invocation
@@ -101,6 +102,8 @@ public class ConverterServiceServlet extends HttpServlet {
                 }
         } catch (IOException ioException) {
                 throw new ServletException("conversion failed", ioException);
+        } catch (OfficeException officeException) {
+                throw new ServletException("conversion failed", officeException);
         } finally {
                 if (inputFile != null) {
                         inputFile.delete();
